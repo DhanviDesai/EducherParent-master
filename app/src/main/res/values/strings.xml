@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Educher-Parent</string>
+    <string-array name="country_code">
+        <item>+91</item>
+        <item>+92</item>
+        <item>+93</item>
+    </string-array>
+    <string name="already">Already register? <b>Login</b></string>
+    <string name="times_only">times</string>
+</resources>

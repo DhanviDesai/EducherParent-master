@@ -5,6 +5,6 @@
         <item>+92</item>
         <item>+93</item>
     </string-array>
-    <string name="already">Already register? <b>Login</b></string>
+    <string name="already">Already registered? <b>Login</b></string>
     <string name="times_only">times</string>
 </resources>

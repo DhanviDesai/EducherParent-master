@@ -8,7 +8,7 @@
     android:background="@color/white"
     tools:context=".PhoneVerification">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/code"
         android:layout_width="100dp"
         android:layout_height="wrap_content"

@@ -25,13 +25,14 @@
             android:layout_marginRight="20dp"
             android:text="Select Schedule Type"
             android:textColor="@color/blackText"
-            android:fontFamily="@font/noto_sans"
+            android:fontFamily="@font/noto_sans_bold"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:gravity="center"/>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <View
+ <!--   <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -44,7 +45,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" />-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
@@ -52,13 +53,14 @@
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toBottomOf="@id/view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.02" >
+        app:layout_constraintTop_toBottomOf="@+id/toolbar5"
+        app:layout_constraintVertical_bias="0.02">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/schedule_all"
@@ -73,10 +75,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="Schedule All Apps"
-                android:textSize="18sp"
-                android:textColor="@color/blackText"
                 android:fontFamily="@font/noto_sans"
+                android:text="Schedule All Apps"
+                android:textColor="@color/blackText"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

@@ -23,14 +23,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="25dp"
-            android:fontFamily="@font/noto_sans"
+            android:fontFamily="@font/noto_sans_bold"
+            android:textStyle="bold"
             android:gravity="center"
             android:text="App Usage"
             android:textColor="@color/blackText"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <View
+  <!--  <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -43,7 +44,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
@@ -55,6 +56,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

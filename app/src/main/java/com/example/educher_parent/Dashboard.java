@@ -54,6 +54,7 @@ public class Dashboard extends AppCompatActivity {
     private static final String TAG = "Dashboaard";
     String packageName;
     String parent_key;
+    String SystemUi;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -246,6 +247,9 @@ public class Dashboard extends AppCompatActivity {
                 if(name.equals("Phone Screen")){
                     packageName = dataSnapshot.child("packageName").getValue().toString().replace('.','_');
                 }
+                if(name.equals("System UI")){
+                    SystemUi = dataSnapshot.child("packageName").getValue().toString().replace('.','_');
+                }
             }
 
             @Override
@@ -279,8 +283,17 @@ public class Dashboard extends AppCompatActivity {
 
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(parent_key).child(prefManager.getChildUniqueId())
                         .child(APPS).child(packageName);
+                DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference().child(parent_key).child(prefManager.getChildUniqueId())
+                        .child(APPS).child(SystemUi);
                 if (lock_phone.getText().equals("Lock Phone")) {
                     reference.child("locked").setValue(true).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                          //  Toast.makeText(Dashboard.this, "Phone Locked", Toast.LENGTH_SHORT).show();
+                            lock_phone.setText("Unlock Phone");
+                        }
+                    });
+                    reference1.child("locked").setValue(true).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Dashboard.this, "Phone Locked", Toast.LENGTH_SHORT).show();
@@ -289,6 +302,14 @@ public class Dashboard extends AppCompatActivity {
                     });
                 }else if(lock_phone.getText().equals("Unlock Phone")){
                     reference.child("locked").setValue(false).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+//                            Toast.makeText(Dashboard.this, "Phone Unlocked", Toast.LENGTH_SHORT).show();
+                            lock_phone.setText("Lock Phone");
+                        }
+                    });
+
+                    reference1.child("locked").setValue(false).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Dashboard.this, "Phone Unlocked", Toast.LENGTH_SHORT).show();

@@ -4,14 +4,14 @@
     package="com.example.educher_parent">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".GraphActivity"></activity>
+        tools:ignore="GoogleAppIndexingWarning"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity android:name=".GraphActivity"/>
         <activity android:name=".EditProfile" />
         <activity android:name=".ScheduleApps" />
         <activity android:name=".SingleAppSchedule" />
